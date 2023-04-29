@@ -6,14 +6,22 @@ public class FriendlyNPC : MonoBehaviour
 {
     private bool isPlayerInRange = false; // Игрок находится в зоне видимости
 
+    [SerializeField] private GameObject _canvasPressF;
+
+
+    private void Start()
+    {
+        _canvasPressF.SetActive(false);
+    }
+
     void Update()
     {
         // Проверяем, находится ли игрок в зоне видимости NPC
-        if (isPlayerInRange)
-        {
-            // Реагируем на приближение игрока
-            Debug.Log("Привет, Мой друг!");
-        }
+        //if (isPlayerInRange)
+        //{
+        //    // Реагируем на приближение игрока
+        //    Debug.Log("Привет, Мой друг!");
+        //}
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -22,6 +30,7 @@ public class FriendlyNPC : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerInRange = true; // Игрок находится в зоне видимости
+            _canvasPressF.SetActive(true);
         }
     }
 
@@ -31,6 +40,7 @@ public class FriendlyNPC : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerInRange = false; // Игрок не находится в зоне видимости
+            _canvasPressF.SetActive(false);
         }
     }
 }
