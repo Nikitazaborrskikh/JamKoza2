@@ -21,7 +21,7 @@ public class LoadScene : MonoBehaviour
 
         while (!operation.isDone)
         {
-            float prgress = operation.progress / 5.0f;
+            float prgress = operation.progress / 10.0f;
             _sliderProgress.value = prgress;
             yield return null;
         }

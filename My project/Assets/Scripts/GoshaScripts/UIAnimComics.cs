@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class UIAnimComics : MonoBehaviour
 {
@@ -26,13 +27,18 @@ public class UIAnimComics : MonoBehaviour
 
     public void OnOpenComicsTwo()
     {
-        _panelComicsTwo.sizeDelta = new Vector2(-500, _panelComicsTwo.sizeDelta.y);
-        _panelComicsTwo.DOSizeDelta(new Vector2(Screen.width, _panelComicsTwo.sizeDelta.y), _timeAnimation);
+        _panelComicsTwo.sizeDelta = new Vector2(_panelComicsTwo.sizeDelta.x, -500);
+        _panelComicsTwo.DOSizeDelta(new Vector2(_panelComicsTwo.sizeDelta.x, Screen.height), _timeAnimation);
     }
 
     public void OnOpenComicsThree()
     {
-        _panelComicsThree.sizeDelta = new Vector2(-500, _panelComicsThree.sizeDelta.y);
+        _panelComicsThree.sizeDelta = new Vector2(-500,_panelComicsThree.sizeDelta.y);
         _panelComicsThree.DOSizeDelta(new Vector2(Screen.width, _panelComicsThree.sizeDelta.y), _timeAnimation);
+    }
+
+    public void NextScene()
+    {
+        SceneManager.LoadScene(1);
     }
 }
