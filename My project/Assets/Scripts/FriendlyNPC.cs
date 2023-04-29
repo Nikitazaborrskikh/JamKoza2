@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class FriendlyNPC : MonoBehaviour
@@ -7,21 +8,22 @@ public class FriendlyNPC : MonoBehaviour
     private bool isPlayerInRange = false; // Игрок находится в зоне видимости
 
     [SerializeField] private GameObject _canvasPressF;
+    [SerializeField] private GameObject _canvasDialoge;
+
+
+    [SerializeField] private TMP_Text _WhatTask;
+    [SerializeField] private TMP_Text _DescriptionTask;
+    [SerializeField] private TMP_Text _TaskIndex;
+
+    private readonly string _WhatTaskNon = " ";
+    private readonly string _DescriptionTaskNon = " ";
+    private readonly string _TaskIndexNon = " ";
 
 
     private void Start()
     {
         _canvasPressF.SetActive(false);
-    }
-
-    void Update()
-    {
-        // Проверяем, находится ли игрок в зоне видимости NPC
-        //if (isPlayerInRange)
-        //{
-        //    // Реагируем на приближение игрока
-        //    Debug.Log("Привет, Мой друг!");
-        //}
+        _canvasDialoge.SetActive(false);
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -30,7 +32,29 @@ public class FriendlyNPC : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerInRange = true; // Игрок находится в зоне видимости
+
             _canvasPressF.SetActive(true);
+
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                Debug.Log("F");
+                _WhatTask.text = _WhatTaskNon;
+                _DescriptionTask.text = _DescriptionTaskNon;
+                _TaskIndex.text = _TaskIndexNon;
+            }
+        }
+    }
+
+    public void OnTriggerStay2D(Collider2D collision)
+    {
+        if (Input.GetKey(KeyCode.F))
+        {
+            Debug.Log("F");
+            _WhatTask.text = _WhatTaskNon;
+            _DescriptionTask.text = _DescriptionTaskNon;
+            _TaskIndex.text = _TaskIndexNon;
+
+            _canvasDialoge.SetActive(false);
         }
     }
 

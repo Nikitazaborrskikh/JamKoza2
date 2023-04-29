@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEditor;
+
 
 public class GiveTask : MonoBehaviour
 {
     public List<ScriptableObject> TaskList = new();
-
+   
     [SerializeField] TMP_Text _WhatTask;
     [SerializeField] TMP_Text _DescriptionTask;
     [SerializeField] TMP_Text _TaskIndex;
