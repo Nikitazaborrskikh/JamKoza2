@@ -21,6 +21,12 @@ public class FriendlyNPC : MonoBehaviour
     private readonly string _DescriptionTaskNon = " ";
     private readonly string _TaskIndexNon = " ";
 
+    private GiveTask _giveTask;
+
+    public FriendlyNPC(GiveTask giveTask)
+    {
+        _giveTask = giveTask;
+    }
 
     private void Start()
     {
@@ -49,6 +55,11 @@ public class FriendlyNPC : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D collision)
     {
+        if (_giveTask.TaskList[1])
+        {
+
+        }
+
         if (Input.GetKey(KeyCode.F))
         {
             Debug.Log("F");
