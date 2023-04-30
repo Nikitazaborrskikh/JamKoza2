@@ -610,7 +610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aaa7d662f9c7e84090e22dda8209d68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneIndex: 2
+  _sceneIndex: 3
   _sliderProgress: {fileID: 119130795}
 --- !u!4 &1761980399
 Transform:

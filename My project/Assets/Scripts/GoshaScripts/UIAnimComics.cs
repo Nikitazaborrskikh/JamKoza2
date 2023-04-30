@@ -39,6 +39,6 @@ public class UIAnimComics : MonoBehaviour
 
     public void NextScene()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 }

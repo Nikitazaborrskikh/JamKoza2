@@ -55,10 +55,10 @@ public class FriendlyNPC : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D collision)
     {
-        if (_giveTask.TaskList[1])
-        {
+        //if (_giveTask.TaskList[1])
+        //{
 
-        }
+        //}
 
         if (Input.GetKey(KeyCode.F))
         {
