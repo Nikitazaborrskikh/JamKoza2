@@ -16,4 +16,4 @@ MonoBehaviour:
   DescriptionTask: Take the potion to the old grandfather on the outskirts of the
     city
   TaskIndex: 1
-  TaskDialoge: 3
+  IndexNPC: 1

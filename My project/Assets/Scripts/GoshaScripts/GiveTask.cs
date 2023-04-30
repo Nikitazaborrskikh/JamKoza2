@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEditor;
-
+using Unity.VisualScripting;
 
 public class GiveTask : MonoBehaviour
 {
@@ -13,11 +13,12 @@ public class GiveTask : MonoBehaviour
     [SerializeField] TMP_Text _DescriptionTask;
     [SerializeField] TMP_Text _TaskIndex;
 
-    private TaskData _taskData;
+    //private TaskData _taskData;
 
     private void Awake()
     {
-        _taskData = Resources.Load<TaskData>("TaskOne");
+        TaskList[0] = Resources.Load<TaskData>("TaskOne");
+        TaskList[1] = Resources.Load<TaskData>("TaskTwo");       
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -33,8 +34,8 @@ public class GiveTask : MonoBehaviour
 
     public void SelectTask()
     {
-        _WhatTask.text = _taskData.WhatTask;
-        _DescriptionTask.text = _taskData.DescriptionTask;
-        _TaskIndex.text = _taskData.TaskIndex;
+        _WhatTask.text = TaskList[0].ToString(); 
+        //_DescriptionTask.text = _taskData.DescriptionTask;
+        //_TaskIndex.text = _taskData.TaskIndex;
     }
 }
