@@ -34,10 +34,8 @@ public class GiveTask : MonoBehaviour
 
     public void SelectTask()
     {
-
         _whatTask.text = _taskData.WhatTask;
         _descriptionTask.text = _taskData.DescriptionTask;
         _taskIndex.text = _taskData.TaskIndex;
-
     }
 }
