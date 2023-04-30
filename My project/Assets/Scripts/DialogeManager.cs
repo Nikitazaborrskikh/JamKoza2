@@ -49,14 +49,6 @@ public class DialogeManager : MonoBehaviour
                 }
             }
         }
-        else
-        {
-            // Если нажата клавиша F, отображаем диалоговое окно
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                ShowDialog();
-            }
-        }
     }
 
     public void ShowDialog()
@@ -72,9 +64,18 @@ public class DialogeManager : MonoBehaviour
         dialogText.text = dialogLines[currentLine];
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerStay2D(Collider2D other)
     {
-       
-        ShowDialog();
+        
+        
+            Debug.Log("Biba");
+            if (Input.GetKey(KeyCode.F))
+            {
+                Debug.Log("Boba");
+                ShowDialog();
+            }
+            
+        
+        
     }
 }
