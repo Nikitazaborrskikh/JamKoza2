@@ -14,6 +14,7 @@ public class GiveTask : MonoBehaviour
     [SerializeField] private TMP_Text _taskIndex;
 
     private TaskData _taskData;
+    public List<TaskData> _tasks;
 
     private void Awake()
     {
