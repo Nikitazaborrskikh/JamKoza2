@@ -9,43 +9,42 @@ using UnityEngine;
 
 public class DialogeManager : MonoBehaviour
 {
-    public GameObject dialogBox; // Ссылка на диалоговое окно
-    public TextMeshProUGUI dialogText; // Ссылка на текст в диалоговом окне
+    public GameObject dialogBox; 
+    public TextMeshProUGUI dialogText; 
 
-    public string[] dialogLines; // Реплики NPC и персонажа
-    public int currentLine; // Текущая реплика
+    public string[] dialogLines; 
+    public int currentLine; 
 
-    public GameObject player; // Ссылка на персонажа
+    public GameObject player; 
 
-    private bool dialogActive; // Отображается ли диалоговое окно
+    private bool dialogActive; 
 
     void Start()
     {
-        dialogBox.SetActive(false); // Скрываем диалоговое окно при старте игры
+        dialogBox.SetActive(false); 
     }
 
     void Update()
     {
-        // Проверяем, активирован ли диалоговое окно
+        
         if (dialogActive)
         {
-            // Показываем текущую реплику
+            
             dialogText.text = dialogLines[currentLine];
 
-            // Если нажат пробел, переходим к следующей реплике
+            
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 currentLine++;
 
-                // Закрываем диалоговое окно, если это была последняя реплика
+                
                 if (currentLine >= dialogLines.Length)
                 {
                     dialogBox.SetActive(false);
                     dialogActive = false;
                     currentLine = 0;
 
-                    // Разрешаем персонажу двигаться после окончания диалога
-                    //player.GetComponent<PlayerController>().canMove = true;
+                    
                 }
             }
         }
@@ -53,13 +52,9 @@ public class DialogeManager : MonoBehaviour
 
     public void ShowDialog()
     {
-        dialogActive = true; // Отображаем диалоговое окно
-        currentLine = 0; // Устанавливаем текущую реплику в начало
+        dialogActive = true; 
 
-        // Блокируем персонажа во время диалога
-        //player.GetComponent<PlayerController>().canMove = false;
-
-        // Показываем реплику NPC
+        
         dialogBox.SetActive(true);
         dialogText.text = dialogLines[currentLine];
     }
@@ -68,10 +63,10 @@ public class DialogeManager : MonoBehaviour
     {
         
         
-            Debug.Log("Biba");
+           
             if (Input.GetKey(KeyCode.F))
             {
-                Debug.Log("Boba");
+                
                 ShowDialog();
             }
             

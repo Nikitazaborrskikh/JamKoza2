@@ -34,11 +34,5 @@ public class PlayerController : MonoBehaviour
         playerRigidbody2D.MovePosition(playerRigidbody2D.position + direction * speed * Time.fixedDeltaTime); 
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Warrior"))
-        {
-            
-        }
-    }
+    
 }
