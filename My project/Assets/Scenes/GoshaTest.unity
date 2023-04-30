@@ -703,7 +703,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &238790746
 GameObject:
@@ -2044,9 +2044,10 @@ MonoBehaviour:
   TaskList:
   - {fileID: 11400000, guid: 2e6d164d68994994191a020870b43f7f, type: 2}
   - {fileID: 11400000, guid: f2e0f32a07757594f8679ee559cb2d42, type: 2}
-  _WhatTask: {fileID: 1126610119}
-  _DescriptionTask: {fileID: 1956111288}
-  _TaskIndex: {fileID: 1710744362}
+  _whatTask: {fileID: 0}
+  _descriptionTask: {fileID: 0}
+  _taskIndex: {fileID: 0}
+  _indexNPC: 0
 --- !u!61 &1017058497
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2274,7 +2275,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1176685293
 GameObject:
@@ -2489,7 +2490,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1382801725
 GameObject:
@@ -3047,7 +3048,7 @@ Transform:
   m_Children:
   - {fileID: 1017058495}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1710744361
 GameObject:
@@ -3370,7 +3371,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &1823164806
 GameObject:
@@ -3500,7 +3501,7 @@ Transform:
   m_Children:
   - {fileID: 786611329}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1836612581
 GameObject:
@@ -4283,7 +4284,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2112327570
 GameObject:

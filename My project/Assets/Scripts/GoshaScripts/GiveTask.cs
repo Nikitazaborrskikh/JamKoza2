@@ -9,16 +9,16 @@ public class GiveTask : MonoBehaviour
 {
     public List<ScriptableObject> TaskList = new();
    
-    [SerializeField] TMP_Text _WhatTask;
-    [SerializeField] TMP_Text _DescriptionTask;
-    [SerializeField] TMP_Text _TaskIndex;
+    [SerializeField] private TMP_Text _whatTask;
+    [SerializeField] private TMP_Text _descriptionTask;
+    [SerializeField] private TMP_Text _taskIndex;
 
-    //private TaskData _taskData;
+    private TaskData _taskData;
 
     private void Awake()
     {
-        TaskList[0] = Resources.Load<TaskData>("TaskOne");
-        TaskList[1] = Resources.Load<TaskData>("TaskTwo");       
+        _taskData = Resources.Load<TaskData>("TaskOne");
+        //TaskList[1] = Resources.Load<TaskData>("TaskTwo");       
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -34,8 +34,8 @@ public class GiveTask : MonoBehaviour
 
     public void SelectTask()
     {
-        _WhatTask.text = TaskList[0].ToString(); 
-        //_DescriptionTask.text = _taskData.DescriptionTask;
-        //_TaskIndex.text = _taskData.TaskIndex;
+        _whatTask.text = _taskData.WhatTask;
+        _descriptionTask.text = _taskData.DescriptionTask;
+        _taskIndex.text = _taskData.TaskIndex;
     }
 }

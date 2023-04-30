@@ -15,6 +15,8 @@ public class FriendlyNPC : MonoBehaviour
     [SerializeField] private TMP_Text _DescriptionTask;
     [SerializeField] private TMP_Text _TaskIndex;
 
+    [SerializeField] private int _indexNPC;
+
     private readonly string _WhatTaskNon = " ";
     private readonly string _DescriptionTaskNon = " ";
     private readonly string _TaskIndexNon = " ";
