@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class MainMenuUI : MonoBehaviour
 {
     [SerializeField] private RectTransform _panelComicsOne;
+    [SerializeField] private RectTransform _NamePanel;
 
     [SerializeField] private float _timeAnimation;
 
@@ -25,5 +26,11 @@ public class MainMenuUI : MonoBehaviour
     public void NextScene()
     {
         SceneManager.LoadScene(1);
+    }
+
+    public void HideNamePanel()
+    {
+        _NamePanel.sizeDelta = new Vector2(Screen.width, _NamePanel.sizeDelta.y);
+        _NamePanel.DOSizeDelta(new Vector2(-1000, _NamePanel.sizeDelta.y), _timeAnimation);
     }
 }
