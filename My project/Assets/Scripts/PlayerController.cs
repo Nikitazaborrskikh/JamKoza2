@@ -1,12 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     public float speed = 5f; 
     private Rigidbody2D playerRigidbody2D; 
-    private Vector2 direction; 
+    private Vector2 direction;
+    
 
     void Start()
     {
@@ -29,5 +32,13 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         playerRigidbody2D.MovePosition(playerRigidbody2D.position + direction * speed * Time.fixedDeltaTime); 
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Warrior"))
+        {
+            
+        }
     }
 }

@@ -71,6 +71,11 @@ public class FriendlyNPC : MonoBehaviour
         }
     }
 
+    public int CheckID()
+    {
+        return _indexNPC;
+    }
+
     void OnTriggerExit2D(Collider2D other)
     {
         // Проверяем, покинул ли игрок зону видимости NPC

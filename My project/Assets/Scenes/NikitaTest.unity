@@ -842,7 +842,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &377462942
@@ -1811,9 +1811,10 @@ MonoBehaviour:
   TaskList:
   - {fileID: 11400000, guid: 2e6d164d68994994191a020870b43f7f, type: 2}
   - {fileID: 11400000, guid: f2e0f32a07757594f8679ee559cb2d42, type: 2}
-  _WhatTask: {fileID: 1126610119}
-  _DescriptionTask: {fileID: 1956111288}
-  _TaskIndex: {fileID: 1710744362}
+  _whatTask: {fileID: 1126610119}
+  _descriptionTask: {fileID: 1956111288}
+  _taskIndex: {fileID: 1710744362}
+  _tasks: []
 --- !u!61 &1017058497
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3505,6 +3506,7 @@ MonoBehaviour:
   _WhatTask: {fileID: 1126610119}
   _DescriptionTask: {fileID: 1956111288}
   _TaskIndex: {fileID: 1710744362}
+  _indexNPC: 0
 --- !u!61 &2020513231
 BoxCollider2D:
   m_ObjectHideFlags: 0

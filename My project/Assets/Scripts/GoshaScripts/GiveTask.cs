@@ -19,7 +19,7 @@ public class GiveTask : MonoBehaviour
     private void Awake()
     {
         _taskData = Resources.Load<TaskData>("TaskOne");
-        //TaskList[1] = Resources.Load<TaskData>("TaskTwo");       
+           
     }
 
     void OnTriggerEnter2D(Collider2D other)

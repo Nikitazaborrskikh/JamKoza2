@@ -8,5 +8,7 @@ public class TaskData : ScriptableObject
     public string WhatTask;
     public string DescriptionTask;
     public string TaskIndex;
-    public GameObject QuestHolder;
+    public int TaskIndexInt;
+
+
 }
