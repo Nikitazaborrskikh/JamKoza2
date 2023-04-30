@@ -18,26 +18,26 @@ public class MainMenuUI : MonoBehaviour
 
     public void OnOpenDeveloperWindow()
     {
-        _windowDeveloper.sizeDelta = new Vector2(-500, Screen.height);
-        _windowDeveloper.DOSizeDelta(new Vector2(Screen.width, Screen.height), _timeAnimation);
+        _windowDeveloper.sizeDelta = new Vector2(-500, 1080);
+        _windowDeveloper.DOSizeDelta(new Vector2(1920, 1080), _timeAnimation);
     }
 
     public void OnCloseDeveloperWindow()
     {
-        _windowDeveloper.sizeDelta = new Vector2(Screen.width, Screen.height);
-        _windowDeveloper.DOSizeDelta(new Vector2(-500, Screen.height), _timeAnimation);
+        _windowDeveloper.sizeDelta = new Vector2(1920, 1080);
+        _windowDeveloper.DOSizeDelta(new Vector2(-500, 1080), _timeAnimation);
     }
 
     public void OnOpenTutorialPanel()
     {
-        _TutorialPanel.sizeDelta = new Vector2(Screen.width, -500);
-        _TutorialPanel.DOSizeDelta(new Vector2(Screen.width, Screen.height), _timeAnimation);
+        _TutorialPanel.sizeDelta = new Vector2(1920, -500);
+        _TutorialPanel.DOSizeDelta(new Vector2(1920, 1080), _timeAnimation);
     }
 
     public void OnCloseTutorialPanel()
     {
-        _TutorialPanel.sizeDelta = new Vector2(Screen.width, Screen.height);
-        _TutorialPanel.DOSizeDelta(new Vector2(Screen.width,-500), _timeAnimation);
+        _TutorialPanel.sizeDelta = new Vector2(1920, 1080);
+        _TutorialPanel.DOSizeDelta(new Vector2(1920, -500), _timeAnimation);
     }
 
     public void NextScene()
