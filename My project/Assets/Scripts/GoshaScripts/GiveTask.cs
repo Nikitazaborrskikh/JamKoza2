@@ -34,8 +34,14 @@ public class GiveTask : MonoBehaviour
 
     public void SelectTask()
     {
+<<<<<<< Updated upstream
         _whatTask.text = _taskData.WhatTask;
         _descriptionTask.text = _taskData.DescriptionTask;
         _taskIndex.text = _taskData.TaskIndex;
+=======
+        _WhatTask.text = _taskData.WhatTask; 
+        _DescriptionTask.text = _taskData.DescriptionTask;
+        _TaskIndex.text = _taskData.TaskIndex;
+>>>>>>> Stashed changes
     }
 }
