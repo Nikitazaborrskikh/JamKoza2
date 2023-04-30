@@ -74,7 +74,7 @@ public class DialogeManager : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if(other.g)
+       
         ShowDialog();
     }
 }
