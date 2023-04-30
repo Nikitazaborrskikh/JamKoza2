@@ -9,6 +9,7 @@ public class MainMenuUI : MonoBehaviour
 {
     [SerializeField] private RectTransform _windowDeveloper;
     [SerializeField] private RectTransform _NamePanel;
+    [SerializeField] private RectTransform _TutorialPanel;
 
     [SerializeField] private float _timeAnimation;
 
@@ -27,6 +28,18 @@ public class MainMenuUI : MonoBehaviour
         _windowDeveloper.DOSizeDelta(new Vector2(-500, Screen.height), _timeAnimation);
     }
 
+    public void OnOpenTutorialPanel()
+    {
+        _TutorialPanel.sizeDelta = new Vector2(Screen.width, -500);
+        _TutorialPanel.DOSizeDelta(new Vector2(Screen.width, Screen.height), _timeAnimation);
+    }
+
+    public void OnCloseTutorialPanel()
+    {
+        _TutorialPanel.sizeDelta = new Vector2(Screen.width, Screen.height);
+        _TutorialPanel.DOSizeDelta(new Vector2(Screen.width,-500), _timeAnimation);
+    }
+
     public void NextScene()
     {
         SceneManager.LoadScene(1);
@@ -40,16 +53,13 @@ public class MainMenuUI : MonoBehaviour
 
     public void SwapMusic()
     {
-        if (_imageOn == true) 
-        {            
-            _imageOn.SetActive(false);
-            _imageOff.SetActive(true);
-        }
-        else if (_imageOff == true)
-        {
-            _imageOn.SetActive(true);
-            _imageOff.SetActive(false);
-        }
-        
+        _imageOff.SetActive(true);
+        _imageOn.SetActive(false);
+    }
+
+    public void SwapMusic1()
+    {
+        _imageOff.SetActive(false);
+        _imageOn.SetActive(true);
     }
 }
