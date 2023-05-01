@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 978c5d9910d41a04882d5c17dcf2a53b, type: 3}
   m_Name: TaskFour
   m_EditorClassIdentifier: 
-  WhatTask: "\u0414\u043E\u0441\u0442\u0430\u0432\u043A\u0430 \u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u0447\u0438\u043A\u0443"
-  DescriptionTask: "\u041F\u0440\u0438\u043D\u0435\u0441\u0442\u0438 \u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u0447\u0438\u043A\u0443
-    \u043F\u0438\u0432\u0430"
+  WhatTask: Licorice decoction
+  DescriptionTask: Bring Amanda Licorice decoction
   TaskIndex: 4
   TaskIndexInt: 4

@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 978c5d9910d41a04882d5c17dcf2a53b, type: 3}
   m_Name: TaskThree
   m_EditorClassIdentifier: 
-  WhatTask: "\u041F\u043E\u0441\u044B\u043B\u043A\u0430 \u0421\u0430\u0448\u0435"
-  DescriptionTask: "\u043F\u0440\u0438\u043D\u0435\u0441\u0442\u0438 \u0421\u0430\u0448\u0435
-    \u043C\u0430\u0441\u043B\u043E \u0410\u043B\u043E\u044D  = 10"
+  WhatTask: Aloe oil
+  DescriptionTask: 'Bring  Amanda Aloe oil = 10 '
   TaskIndex: 3
   TaskIndexInt: 3

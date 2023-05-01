@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 978c5d9910d41a04882d5c17dcf2a53b, type: 3}
   m_Name: TaskSeven
   m_EditorClassIdentifier: 
-  WhatTask: "\u041F\u043E\u0441\u044B\u043B\u043A\u0430 \u041C\u0430\u0448\u0435"
-  DescriptionTask: "\u043F\u0440\u0438\u043D\u0435\u0441\u0442\u0438 \u041C\u0430\u0448\u0435
-    \u043E\u0442\u0432\u0430\u0440 \u041C\u0435\u0434\u0443\u043D\u0438\u0446\u044B
-    = 20"
+  WhatTask: Lungwort decoction
+  DescriptionTask: Bring Amelia  Lungwort decoction = 20
   TaskIndex: 7
   TaskIndexInt: 7
