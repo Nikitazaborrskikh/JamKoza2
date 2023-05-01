@@ -38,10 +38,5 @@ public class GiveTask : MonoBehaviour
         _taskIndexInt = randomSO.TaskIndexInt;
     }
 
-    public int ReturnID()
-    {
-        Debug.Log("Aboba");
-        return _taskIndexInt;
-        
-    }
+    
 }

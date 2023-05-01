@@ -11,14 +11,18 @@ public class DialogeManager : MonoBehaviour
 {
     public GameObject dialogBox; 
     public TextMeshProUGUI dialogText; 
-
-    public string[] dialogLines; 
+    
+    public string[] dialogLines;
+    public string[] dialogLines1;
     public int currentLine; 
-
+    private GiveTask _giveTask;
     public GameObject player; 
 
     private bool dialogActive; 
-
+    public DialogeManager(GiveTask giveTask)
+    {
+        _giveTask = giveTask;
+    }
     void Start()
     {
         dialogBox.SetActive(false); 
@@ -38,7 +42,7 @@ public class DialogeManager : MonoBehaviour
                 currentLine++;
 
                 
-                if (currentLine >= dialogLines.Length)
+                if (currentLine >= dialogLines.Length || currentLine >= dialogLines1.Length)
                 {
                     dialogBox.SetActive(false);
                     dialogActive = false;
@@ -58,6 +62,14 @@ public class DialogeManager : MonoBehaviour
         dialogBox.SetActive(true);
         dialogText.text = dialogLines[currentLine];
     }
+    public void ShowDialog1()
+    {
+        dialogActive = true; 
+
+        
+        dialogBox.SetActive(true);
+        dialogText.text = dialogLines1[currentLine];
+    }
 
     private void OnTriggerStay2D(Collider2D other)
     {
@@ -66,8 +78,14 @@ public class DialogeManager : MonoBehaviour
            
             if (Input.GetKey(KeyCode.F))
             {
-                
-                ShowDialog();
+                if(_giveTask._taskIndexInt % 2 == 0)
+                {
+                    ShowDialog();
+                }
+                else
+                {
+                    ShowDialog1(); 
+                }
             }
             
         
