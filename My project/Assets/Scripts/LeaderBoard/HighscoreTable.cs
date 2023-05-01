@@ -16,14 +16,19 @@ public class HighscoreTable : MonoBehaviour
 
     private void Awake()
     {
+
         _entryContainer = transform.Find("ContentText");
         _entyTemplate = _entryContainer.Find("Template");
 
         _entyTemplate.gameObject.SetActive(false);
 
+        //_highscoreEntryList = new List<HighscoreEntry>()
+        //{
+        //    new HighscoreEntry{ Score = 229, Name = "biba"}
+        //};
 
-        AddHighscoreEntry(228, "Biba");      
-        AddHighscoreEntry(339, "Boba");      
+        AddHighscoreEntry(228, "Biba");
+        AddHighscoreEntry(339, "Boba");
 
         string jsonString = PlayerPrefs.GetString("highscoreTable");
         Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
@@ -124,13 +129,13 @@ public class HighscoreTable : MonoBehaviour
 
     public void AddHighscoreEntry(int score, string name)
     {
-        HighscoreEntry highscoreEntry = new HighscoreEntry { Score = score, Name = name };
+        HighscoreEntry highscoreEntry = new() { Score = score, Name = name };
 
         string jsonString = PlayerPrefs.GetString("highscoreTable");
         Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
 
         highscores.highscoreEntryList.Add(highscoreEntry);
-
+       
         string json = JsonUtility.ToJson(highscores);
         PlayerPrefs.SetString("highscoreTable", json);
         PlayerPrefs.Save();
@@ -140,6 +145,7 @@ public class HighscoreTable : MonoBehaviour
     {
         public List<HighscoreEntry> highscoreEntryList;
     }
+
 
 
     [Serializable]
