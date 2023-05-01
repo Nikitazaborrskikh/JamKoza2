@@ -2161,6 +2161,7 @@ MonoBehaviour:
   _indexNPC: 9
   _indexNPC1: 10
   _giveTask: {fileID: 1017058496}
+  _ScoreAdd: {fileID: 0}
 --- !u!61 &437182959
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2476,6 +2477,7 @@ MonoBehaviour:
   _indexNPC: 7
   _indexNPC1: 8
   _giveTask: {fileID: 1017058496}
+  _ScoreAdd: {fileID: 0}
 --- !u!61 &482372033
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3149,6 +3151,7 @@ MonoBehaviour:
   _indexNPC: 11
   _indexNPC1: 12
   _giveTask: {fileID: 1017058496}
+  _ScoreAdd: {fileID: 0}
 --- !u!61 &782992109
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5323,6 +5326,7 @@ MonoBehaviour:
   _indexNPC: 5
   _indexNPC1: 6
   _giveTask: {fileID: 1017058496}
+  _ScoreAdd: {fileID: 0}
 --- !u!61 &1308515257
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7580,6 +7584,7 @@ MonoBehaviour:
   _indexNPC: 1
   _indexNPC1: 2
   _giveTask: {fileID: 1017058496}
+  _ScoreAdd: {fileID: 0}
 --- !u!61 &1823164808
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9311,6 +9316,7 @@ MonoBehaviour:
   _indexNPC: 3
   _indexNPC1: 4
   _giveTask: {fileID: 1017058496}
+  _ScoreAdd: {fileID: 0}
 --- !u!61 &2020513231
 BoxCollider2D:
   m_ObjectHideFlags: 0
