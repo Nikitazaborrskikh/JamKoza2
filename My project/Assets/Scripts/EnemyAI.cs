@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -35,6 +36,11 @@ public class EnemyAI : MonoBehaviour
         {
             
             transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+        }
+
+        if (distanceToTarget <= 0.8f)
+        {
+            SceneManager.LoadScene(6);
         }
     }
 }
