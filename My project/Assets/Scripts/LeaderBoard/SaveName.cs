@@ -12,9 +12,12 @@ public class SaveName : MonoBehaviour
     private HighscoreTable highscoreTable;
     private int _scorePlayer = 1888;
     private string _name;
-
+    [SerializeField] private ScoreAdd _scoreAdd;
+    private ScoreAdd _ScoreCheck;
+    
     private void Awake()
     {
+       
         highscoreTable = new HighscoreTable();
     }
 
@@ -27,6 +30,6 @@ public class SaveName : MonoBehaviour
     public void OnSaveName()
     {
         Debug.Log(NamePlayer.text);
-        highscoreTable.AddHighscoreEntry(_scorePlayer, NamePlayer.text);       
+            
     }
 }

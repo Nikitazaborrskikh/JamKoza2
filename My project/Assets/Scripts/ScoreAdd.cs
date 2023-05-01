@@ -14,4 +14,10 @@ public class ScoreAdd : MonoBehaviour
         score += 100;
         _scoretext.text = $"Score:{score}";
     }
+
+    public int ScoreCount()
+    {
+        return score;
+        
+    }
 }
