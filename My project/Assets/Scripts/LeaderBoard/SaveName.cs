@@ -14,7 +14,7 @@ public class SaveName : MonoBehaviour
     private string _name;
 
     private void Awake()
-    {   
+    {
         highscoreTable = new HighscoreTable();
     }
 
