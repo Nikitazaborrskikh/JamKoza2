@@ -6,7 +6,7 @@ public class FollowPlayer : MonoBehaviour
 {
     public Transform target; 
     public float smoothing = 5f; 
-    public Vector3 offset = new Vector3(0f, 1f, -10f); 
+    public Vector3 offset = new Vector3(0f, 1f, -5f); 
 
     private Camera cam;
 
