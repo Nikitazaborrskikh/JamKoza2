@@ -9,8 +9,8 @@ public class ScoreSystem : MonoBehaviour
 
     private HighscoreTable highscoreTable;
 
-    public void OnSaveScore()
-    {
-        highscoreTable.AddName(_scoreText.text);       
-    }
+    //public void OnSaveScore()
+    //{
+    //    highscoreTable.AddName(_scoreText.text);       
+    //}
 }

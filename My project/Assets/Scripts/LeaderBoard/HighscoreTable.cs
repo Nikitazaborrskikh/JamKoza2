@@ -135,17 +135,6 @@ public class HighscoreTable : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    public void AddScore(int score)
-    {
-
-    }
-
-    public void AddName(string name)
-    {
-      
-    }
-
-
     private class Highscores
     {
         public List<HighscoreEntry> highscoreEntryList;

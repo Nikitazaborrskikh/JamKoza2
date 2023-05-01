@@ -10,19 +10,23 @@ public class SaveName : MonoBehaviour
     [SerializeField] private GameObject _panelClose;
 
     private HighscoreTable highscoreTable;
-    private int _scorePlayer = 0;
+    private int _scorePlayer = 1888;
     private string _name;
 
     private void Awake()
-    {
-        DontDestroyOnLoad(this);
+    {   
         highscoreTable = new HighscoreTable();
+    }
+
+    public void OnClosePanel()
+    {
+        //_name = NamePlayer.text;
+        _panelClose.SetActive(false);
     }
 
     public void OnSaveName()
     {
-
-        highscoreTable.AddHighscoreEntry(_scorePlayer, NamePlayer.text);
-        _panelClose.SetActive(false);
+        Debug.Log(NamePlayer.text);
+        highscoreTable.AddHighscoreEntry(_scorePlayer, NamePlayer.text);       
     }
 }
