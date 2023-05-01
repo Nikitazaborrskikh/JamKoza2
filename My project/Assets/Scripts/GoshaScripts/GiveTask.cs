@@ -1,29 +1,39 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEditor;
 using Unity.VisualScripting;
+using Random = UnityEngine.Random;
 
-public class GiveTask : MonoBehaviour
+public  class GiveTask : MonoBehaviour
 {
     public List<TaskData> TaskList = new();
-   
+    private FriendlyNPC _friendlyNpc;
     [SerializeField] private TMP_Text _whatTask;
     [SerializeField] private TMP_Text _descriptionTask;
-    [SerializeField] private TMP_Text _taskIndex;
-    public int _taskIndexInt = 0;
-    
-    void OnTriggerEnter2D(Collider2D other)
+    [SerializeField] private TMP_Text _taskIndex; 
+     public int _taskIndexInt = 0;
+     
+     
+
+     void OnTriggerEnter2D(Collider2D other)
     {
-        
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Give a Task");
-            SelectTask();
+            if(_taskIndexInt == 0)
+            {
+              Debug.Log("Give a Task"); 
+              SelectTask();
+            }
+        
+            
         }
             
     }
+
+    
 
     public void SelectTask()
     {
@@ -38,10 +48,9 @@ public class GiveTask : MonoBehaviour
         _taskIndexInt = randomSO.TaskIndexInt;
     }
 
-    public int ReturnID()
-    {
-        Debug.Log("Aboba");
-        return _taskIndexInt;
-        
-    }
+    
+
+
+
+
 }

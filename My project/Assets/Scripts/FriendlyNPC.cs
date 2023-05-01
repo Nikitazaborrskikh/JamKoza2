@@ -16,15 +16,17 @@ public class FriendlyNPC : MonoBehaviour
     [SerializeField] private TMP_Text _WhatTask;
     [SerializeField] private TMP_Text _DescriptionTask;
     [SerializeField] private TMP_Text _TaskIndex;
+    [SerializeField] private int _TaskIndexInt;
 
     public string _indexNPC;
     public string _indexNPC1;
 
     private readonly string _WhatTaskNon = " ";
     private readonly string _DescriptionTaskNon = " ";
-    private readonly string _TaskIndexNon = " ";
+    public readonly string _TaskIndexNon = " ";
 
-    private GiveTask _giveTask;
+    [SerializeField]private GiveTask _giveTask;
+    
 
     public FriendlyNPC(GiveTask giveTask)
     {
@@ -35,6 +37,7 @@ public class FriendlyNPC : MonoBehaviour
     {
         _canvasPressF.SetActive(false);
         _canvasDialoge.SetActive(false);
+       
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -46,6 +49,7 @@ public class FriendlyNPC : MonoBehaviour
             {
                 isPlayerInRange = true;
                 _canvasPressF.SetActive(true);
+                
             }
             
         }
@@ -61,25 +65,26 @@ public class FriendlyNPC : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.F))
             {
                 Debug.Log("F");
-                _WhatTask.text = _WhatTaskNon;
-                _DescriptionTask.text = _DescriptionTaskNon;
-                _TaskIndex.text = _TaskIndexNon;
-                _canvasDialoge.SetActive(false);
-                _canvasPressF.SetActive(false);            
+                  QuestCompleted();       
             }
         }
        
     }
 
-   
+    public void QuestCompleted()
+    {
+        _WhatTask.text = _WhatTaskNon;
+        _DescriptionTask.text = _DescriptionTaskNon;
+        _TaskIndex.text = _TaskIndexNon;
+        _giveTask._taskIndexInt = 0;
+        
+        _canvasDialoge.SetActive(false);
+        _canvasPressF.SetActive(false);
+    }
 
-    // void OnTriggerExit2D(Collider2D other)
-    // {
-    //     // Проверяем, покинул ли игрок зону видимости NPC
-    //     if (other.CompareTag("Player"))
-    //     {
-    //         isPlayerInRange = false; // Игрок не находится в зоне видимости
-    //         _canvasPressF.SetActive(false);
-    //     }
-    // }
+    
+
+
+
+
 }
