@@ -21,7 +21,7 @@ public class ScoreUI : MonoBehaviour
     private void Start()
     {
 
-        Debug.Log(_saveName.NameSave);
+        //Debug.Log(_saveName.NameSave);
         //_scoreManager.AddScore(new Score(_saveName.NameSave, _saveIndex));
         _scoreManager.AddScore(new Score("boba", 1337));
 
