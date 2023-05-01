@@ -22,7 +22,8 @@ public class DialogeManager : MonoBehaviour
     private int counter = 0;
 
     
-    public GameObject player; 
+    [SerializeField] private GameObject _player;
+    
 
     private bool dialogActive; 
     
@@ -38,6 +39,7 @@ public class DialogeManager : MonoBehaviour
         
         if (dialogActive)
         {
+            _player.SetActive(false);
             
             if(randomIndex <= 0)
             {
@@ -58,10 +60,12 @@ public class DialogeManager : MonoBehaviour
                 
                 if (currentLine >= dialogLines.Length || currentLine >= dialogLines1.Length)
                 {
+                    _player.SetActive(true);
+                    
                     dialogBox.SetActive(false);
                     dialogActive = false;
                     currentLine = 0;
-
+                   
                     
                 }
             }
