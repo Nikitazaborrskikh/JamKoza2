@@ -4,28 +4,30 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
-
+using Random = UnityEngine.Random;
 
 
 public class DialogeManager : MonoBehaviour
 {
-    public GameObject dialogBox; 
-    public TextMeshProUGUI dialogText; 
-    
+    public GameObject dialogBox;
+    public TextMeshProUGUI dialogText;
+
     public string[] dialogLines;
     public string[] dialogLines1;
-    public int currentLine; 
-    private GiveTask _giveTask;
+    public int currentLine;
+    [SerializeField] GiveTask _giveTask;
+    private int randomIndex;
+
+    
     public GameObject player; 
 
     private bool dialogActive; 
-    public DialogeManager(GiveTask giveTask)
-    {
-        _giveTask = giveTask;
-    }
+    
     void Start()
     {
         dialogBox.SetActive(false); 
+        randomIndex = Random.Range(-10, 10);
+        
     }
 
     void Update()
@@ -34,7 +36,15 @@ public class DialogeManager : MonoBehaviour
         if (dialogActive)
         {
             
-            dialogText.text = dialogLines[currentLine];
+            if(randomIndex <= 0)
+            {
+                dialogText.text = dialogLines[currentLine];
+            }
+            if (randomIndex > 0)
+            {
+                dialogText.text = dialogLines1[currentLine];
+            }
+           
 
             
             if (Input.GetKeyDown(KeyCode.Space))
@@ -76,16 +86,21 @@ public class DialogeManager : MonoBehaviour
         
         
            
-            if (Input.GetKey(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.F))
             {
-                if(_giveTask._taskIndexInt % 2 == 0)
+                
+                Debug.Log(randomIndex);
+                if(randomIndex <= 0)
                 {
                     ShowDialog();
                 }
-                else
+                if(randomIndex >= 0)
                 {
-                    ShowDialog1(); 
+                    ShowDialog1();
                 }
+                
+                
+                
             }
             
         

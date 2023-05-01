@@ -11,7 +11,7 @@ public class FriendlyNPC : MonoBehaviour
 
     [SerializeField] private GameObject _canvasPressF;
     [SerializeField] private GameObject _canvasDialoge;
-     
+    [SerializeField] private GameObject _miniMapMarker;
 
     [SerializeField] private TMP_Text _WhatTask;
     [SerializeField] private TMP_Text _DescriptionTask;
@@ -37,7 +37,16 @@ public class FriendlyNPC : MonoBehaviour
     {
         _canvasPressF.SetActive(false);
         _canvasDialoge.SetActive(false);
-       
+       _miniMapMarker.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (_indexNPC == _TaskIndex.text || _indexNPC1 == _TaskIndex.text)
+        {
+            _miniMapMarker.SetActive(true);
+                
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -77,7 +86,7 @@ public class FriendlyNPC : MonoBehaviour
         _DescriptionTask.text = _DescriptionTaskNon;
         _TaskIndex.text = _TaskIndexNon;
         _giveTask._taskIndexInt = 0;
-        
+        _miniMapMarker.SetActive(false);
         _canvasDialoge.SetActive(false);
         _canvasPressF.SetActive(false);
     }
