@@ -9,6 +9,7 @@ public class MainMenuUI : MonoBehaviour
 {
     [SerializeField] private RectTransform _windowDeveloper;
     [SerializeField] private RectTransform _NamePanel;
+    [SerializeField] private RectTransform _TutorialPanel;
 
     [SerializeField] private float _timeAnimation;
 
@@ -17,14 +18,26 @@ public class MainMenuUI : MonoBehaviour
 
     public void OnOpenDeveloperWindow()
     {
-        _windowDeveloper.sizeDelta = new Vector2(-500, Screen.height);
-        _windowDeveloper.DOSizeDelta(new Vector2(Screen.width, Screen.height), _timeAnimation);
+        _windowDeveloper.sizeDelta = new Vector2(-500, 1080);
+        _windowDeveloper.DOSizeDelta(new Vector2(1920, 1080), _timeAnimation);
     }
 
     public void OnCloseDeveloperWindow()
     {
-        _windowDeveloper.sizeDelta = new Vector2(Screen.width, Screen.height);
-        _windowDeveloper.DOSizeDelta(new Vector2(-500, Screen.height), _timeAnimation);
+        _windowDeveloper.sizeDelta = new Vector2(1920, 1080);
+        _windowDeveloper.DOSizeDelta(new Vector2(-500, 1080), _timeAnimation);
+    }
+
+    public void OnOpenTutorialPanel()
+    {
+        _TutorialPanel.sizeDelta = new Vector2(1920, -500);
+        _TutorialPanel.DOSizeDelta(new Vector2(1920, 1080), _timeAnimation);
+    }
+
+    public void OnCloseTutorialPanel()
+    {
+        _TutorialPanel.sizeDelta = new Vector2(1920, 1080);
+        _TutorialPanel.DOSizeDelta(new Vector2(1920, -500), _timeAnimation);
     }
 
     public void NextScene()
@@ -40,16 +53,13 @@ public class MainMenuUI : MonoBehaviour
 
     public void SwapMusic()
     {
-        if (_imageOn == true) 
-        {            
-            _imageOn.SetActive(false);
-            _imageOff.SetActive(true);
-        }
-        else if (_imageOff == true)
-        {
-            _imageOn.SetActive(true);
-            _imageOff.SetActive(false);
-        }
-        
+        _imageOff.SetActive(true);
+        _imageOn.SetActive(false);
+    }
+
+    public void SwapMusic1()
+    {
+        _imageOff.SetActive(false);
+        _imageOn.SetActive(true);
     }
 }
