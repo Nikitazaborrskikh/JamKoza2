@@ -5,6 +5,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using UnityEngine.UI;
 
 
 public class DialogeManager : MonoBehaviour
@@ -17,9 +18,12 @@ public class DialogeManager : MonoBehaviour
     public int currentLine;
     [SerializeField] GiveTask _giveTask;
     private int randomIndex;
+    [SerializeField] private GameObject[] _pictures;
+    private int counter = 0;
 
     
-    public GameObject player; 
+    [SerializeField] private GameObject _player;
+    
 
     private bool dialogActive; 
     
@@ -27,7 +31,7 @@ public class DialogeManager : MonoBehaviour
     {
         dialogBox.SetActive(false); 
         randomIndex = Random.Range(-10, 10);
-        
+         
     }
 
     void Update()
@@ -35,6 +39,7 @@ public class DialogeManager : MonoBehaviour
         
         if (dialogActive)
         {
+            _player.SetActive(false);
             
             if(randomIndex <= 0)
             {
@@ -44,20 +49,23 @@ public class DialogeManager : MonoBehaviour
             {
                 dialogText.text = dialogLines1[currentLine];
             }
-           
+            _pictures[counter].SetActive(true);
 
             
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 currentLine++;
-
+                _pictures[counter].SetActive(false);
+                _pictures[counter++].SetActive(false);
                 
                 if (currentLine >= dialogLines.Length || currentLine >= dialogLines1.Length)
                 {
+                    _player.SetActive(true);
+                    counter = 0;
                     dialogBox.SetActive(false);
                     dialogActive = false;
                     currentLine = 0;
-
+                   
                     
                 }
             }

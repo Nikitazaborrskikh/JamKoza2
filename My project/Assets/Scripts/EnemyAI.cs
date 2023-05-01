@@ -40,6 +40,7 @@ public class EnemyAI : MonoBehaviour
 
         if (distanceToTarget <= 0.8f)
         {
+            
             SceneManager.LoadScene(6);
         }
     }

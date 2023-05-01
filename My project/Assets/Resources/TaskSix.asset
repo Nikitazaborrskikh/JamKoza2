@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 978c5d9910d41a04882d5c17dcf2a53b, type: 3}
   m_Name: TaskSix
   m_EditorClassIdentifier: 
-  WhatTask: "\u041F\u043E\u0441\u044B\u043B\u043A\u0430 \u0413\u0435\u043E\u0440\u0433\u0438\u044E"
-  DescriptionTask: "\u043F\u0440\u0438\u043D\u0435\u0441\u0442\u0438 \u0413\u0435\u043E\u0440\u0433\u0438\u044E
-    \u0447\u0430\u0439 \u0438\u0437 \u0411\u043E\u044F\u0440\u044B\u0448\u043D\u0438\u043A\u0430
-    = 10"
+  WhatTask: Hawthorne tea
+  DescriptionTask: Bring Emma Hawthorne tea = 10
   TaskIndex: 6
   TaskIndexInt: 6
