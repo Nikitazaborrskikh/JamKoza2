@@ -193,18 +193,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 348633151}
-          m_TargetAssemblyTypeName: MainMenuUI, Assembly-CSharp
-          m_MethodName: HideNamePanel
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &13195262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -448,7 +436,7 @@ RectTransform:
   m_Children:
   - {fileID: 2142561458}
   m_Father: {fileID: 2006254679}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.093, y: 0.096851856}
   m_AnchorMax: {x: 0.906, y: 0.906}
@@ -685,7 +673,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2eb7a4b3d1703244eac35f286164d924, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c8d95b78065b4a646b07f89e557194ac, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -947,7 +935,7 @@ RectTransform:
   - {fileID: 75991903}
   - {fileID: 1295840959}
   m_Father: {fileID: 2006254679}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -1209,7 +1197,7 @@ RectTransform:
   - {fileID: 776704522}
   - {fileID: 934595212}
   m_Father: {fileID: 2006254679}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2353,7 +2341,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 350f57eef30fb7d46b26ad4942a21df9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d4d19f0b6c7f495448901c7458297445, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3368,7 +3356,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1149719607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3382,6 +3370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NamePlayer: {fileID: 521976293}
+  _panelClose: {fileID: 1568898576}
 --- !u!4 &1149719608
 Transform:
   m_ObjectHideFlags: 0
@@ -3701,7 +3690,7 @@ RectTransform:
   - {fileID: 2065873942}
   - {fileID: 1878273670}
   m_Father: {fileID: 2006254679}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3893,7 +3882,7 @@ RectTransform:
   - {fileID: 452911194}
   - {fileID: 915499006}
   m_Father: {fileID: 2006254679}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -4031,7 +4020,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1568898577
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4047,7 +4036,7 @@ RectTransform:
   - {fileID: 665458856}
   - {fileID: 13195260}
   m_Father: {fileID: 2006254679}
-  m_RootOrder: 0
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -4370,7 +4359,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2d474c08a4e8e214485adee5256e5486, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 03b0e6bff30d2d749b69555151052283, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5118,12 +5107,12 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1568898577}
   - {fileID: 85567595}
   - {fileID: 366126390}
   - {fileID: 1274336274}
   - {fileID: 1441542926}
   - {fileID: 271617533}
+  - {fileID: 1568898577}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
