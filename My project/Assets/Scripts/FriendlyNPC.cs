@@ -26,6 +26,7 @@ public class FriendlyNPC : MonoBehaviour
     public readonly string _TaskIndexNon = " ";
 
     [SerializeField]private GiveTask _giveTask;
+    [SerializeField]private ScoreAdd _ScoreAdd;
     
 
     public FriendlyNPC(GiveTask giveTask)
@@ -89,6 +90,7 @@ public class FriendlyNPC : MonoBehaviour
         _miniMapMarker.SetActive(false);
         _canvasDialoge.SetActive(false);
         _canvasPressF.SetActive(false);
+        _ScoreAdd.AddScore();
     }
 
     
