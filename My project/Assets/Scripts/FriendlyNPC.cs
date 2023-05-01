@@ -25,6 +25,7 @@ public class FriendlyNPC : MonoBehaviour
     private readonly string _TaskIndexNon = " ";
 
     private GiveTask _giveTask;
+    
 
     public FriendlyNPC(GiveTask giveTask)
     {
@@ -35,6 +36,7 @@ public class FriendlyNPC : MonoBehaviour
     {
         _canvasPressF.SetActive(false);
         _canvasDialoge.SetActive(false);
+        _giveTask = new GiveTask();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -46,6 +48,7 @@ public class FriendlyNPC : MonoBehaviour
             {
                 isPlayerInRange = true;
                 _canvasPressF.SetActive(true);
+                _giveTask.QuestActive();
             }
             
         }
@@ -64,6 +67,7 @@ public class FriendlyNPC : MonoBehaviour
                 _WhatTask.text = _WhatTaskNon;
                 _DescriptionTask.text = _DescriptionTaskNon;
                 _TaskIndex.text = _TaskIndexNon;
+                _giveTask.QuestActive();
                 _canvasDialoge.SetActive(false);
                 _canvasPressF.SetActive(false);            
             }
@@ -73,13 +77,5 @@ public class FriendlyNPC : MonoBehaviour
 
    
 
-    // void OnTriggerExit2D(Collider2D other)
-    // {
-    //     // Проверяем, покинул ли игрок зону видимости NPC
-    //     if (other.CompareTag("Player"))
-    //     {
-    //         isPlayerInRange = false; // Игрок не находится в зоне видимости
-    //         _canvasPressF.SetActive(false);
-    //     }
-    // }
+    
 }
