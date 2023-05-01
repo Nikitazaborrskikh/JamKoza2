@@ -61,7 +61,7 @@ public class DialogeManager : MonoBehaviour
                 if (currentLine >= dialogLines.Length || currentLine >= dialogLines1.Length)
                 {
                     _player.SetActive(true);
-                    
+                    counter = 0;
                     dialogBox.SetActive(false);
                     dialogActive = false;
                     currentLine = 0;
