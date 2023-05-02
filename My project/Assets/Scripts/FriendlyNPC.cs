@@ -17,7 +17,7 @@ public class FriendlyNPC : MonoBehaviour
     [SerializeField] private TMP_Text _DescriptionTask;
     [SerializeField] private TMP_Text _TaskIndex;
     [SerializeField] private int _TaskIndexInt;
-
+    private bool _isInteractable;
     public string _indexNPC;
     public string _indexNPC1;
 
@@ -48,6 +48,15 @@ public class FriendlyNPC : MonoBehaviour
             _miniMapMarker.SetActive(true);
                 
         }
+
+        if (_isInteractable)
+        {
+            if (Input.GetKeyDown(KeyCode.F))
+            { 
+                Debug.Log("F");
+                QuestCompleted();       
+            }
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -57,6 +66,7 @@ public class FriendlyNPC : MonoBehaviour
         {
             if (_indexNPC == _TaskIndex.text || _indexNPC1 == _TaskIndex.text)
             {
+                _isInteractable = true;
                 isPlayerInRange = true;
                 _canvasPressF.SetActive(true);
                 
@@ -65,18 +75,25 @@ public class FriendlyNPC : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            _isInteractable = false;
+        }
+       
+    }
+
     public void OnTriggerStay2D(Collider2D collision)
     {
         
         if (_indexNPC == _TaskIndex.text|| _indexNPC1 == _TaskIndex.text)
         {
             _canvasPressF.SetActive(true);
+           Debug.Log("1111");
+           _isInteractable = true;
 
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                Debug.Log("F");
-                  QuestCompleted();       
-            }
+           
         }
        
     }
@@ -91,6 +108,7 @@ public class FriendlyNPC : MonoBehaviour
         _canvasDialoge.SetActive(false);
         _canvasPressF.SetActive(false);
         _ScoreAdd.AddScore();
+        _isInteractable = false;
     }
 
     
