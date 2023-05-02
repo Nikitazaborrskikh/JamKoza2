@@ -47,11 +47,11 @@ public class DialogeManager : MonoBehaviour
             _playerRB.constraints = RigidbodyConstraints2D.FreezePosition;
             _pictures[counter].SetActive(true);
 
-            if(randomIndex <= 0)
+            if(_giveTask._taskIndexInt % 2 == 0)
             {
                 ShowDialog();
             }
-            if (randomIndex > 0)
+            if (_giveTask._taskIndexInt % 2 != 0)
             {
                 ShowDialog1();
             }
