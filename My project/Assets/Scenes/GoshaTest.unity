@@ -7315,15 +7315,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canvasPressF: {fileID: 127831944}
-  _canvasDialoge: {fileID: 262065623}
   _miniMapMarker: {fileID: 355885308}
   _WhatTask: {fileID: 1126610119}
   _DescriptionTask: {fileID: 1956111288}
   _TaskIndex: {fileID: 1710744362}
   _TaskIndexInt: 0
+  _isInteractable: 0
   _indexNPC: 9
   _indexNPC1: 10
   _giveTask: {fileID: 1017058496}
+  _dialoge: {fileID: 437182962}
 --- !u!61 &437182959
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7410,7 +7411,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 437182957}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.633, y: -14.884, z: 0}
+  m_LocalPosition: {x: 9.633001, y: -14.884, z: 0}
   m_LocalScale: {x: 0.76135, y: 0.76135, z: 0.76135}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7458,6 +7459,8 @@ MonoBehaviour:
   - {fileID: 385713042}
   - {fileID: 1274145541}
   _player: {fileID: 146073236}
+  _npc: {fileID: 437182958}
+  dialogActive: 0
 --- !u!1 &437369034
 GameObject:
   m_ObjectHideFlags: 0
@@ -8144,15 +8147,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canvasPressF: {fileID: 1875990368}
-  _canvasDialoge: {fileID: 262065623}
   _miniMapMarker: {fileID: 2022194186}
   _WhatTask: {fileID: 1126610119}
   _DescriptionTask: {fileID: 1956111288}
   _TaskIndex: {fileID: 1710744362}
   _TaskIndexInt: 0
+  _isInteractable: 0
   _indexNPC: 7
   _indexNPC1: 8
   _giveTask: {fileID: 1017058496}
+  _dialoge: {fileID: 482372036}
 --- !u!61 &482372033
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8238,7 +8242,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 482372031}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -29.51, y: -13.763, z: 0}
   m_LocalScale: {x: 0.76135, y: 0.76135, z: 0.76135}
   m_ConstrainProportionsScale: 0
@@ -8286,6 +8290,8 @@ MonoBehaviour:
   - {fileID: 103039297}
   - {fileID: 1457329710}
   _player: {fileID: 146073236}
+  _npc: {fileID: 482372032}
+  dialogActive: 0
 --- !u!1 &487696935
 GameObject:
   m_ObjectHideFlags: 0
@@ -11609,15 +11615,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canvasPressF: {fileID: 1670369364}
-  _canvasDialoge: {fileID: 262065623}
   _miniMapMarker: {fileID: 1857463851}
   _WhatTask: {fileID: 1126610119}
   _DescriptionTask: {fileID: 1956111288}
   _TaskIndex: {fileID: 1710744362}
   _TaskIndexInt: 0
+  _isInteractable: 0
   _indexNPC: 11
   _indexNPC1: 12
   _giveTask: {fileID: 1017058496}
+  _dialoge: {fileID: 782992112}
 --- !u!61 &782992109
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11703,8 +11710,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 782992107}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.563, y: 11.065, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -7.5630016, y: 11.065, z: 0}
   m_LocalScale: {x: 0.76135, y: 0.76135, z: 0.76135}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11751,6 +11758,8 @@ MonoBehaviour:
   - {fileID: 1216389905}
   - {fileID: 706692805}
   _player: {fileID: 146073236}
+  _npc: {fileID: 782992108}
+  dialogActive: 0
 --- !u!1 &784760586
 GameObject:
   m_ObjectHideFlags: 0
@@ -20107,15 +20116,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canvasPressF: {fileID: 678522687}
-  _canvasDialoge: {fileID: 262065623}
   _miniMapMarker: {fileID: 1866318611}
   _WhatTask: {fileID: 1126610119}
   _DescriptionTask: {fileID: 1956111288}
   _TaskIndex: {fileID: 1710744362}
   _TaskIndexInt: 0
+  _isInteractable: 0
   _indexNPC: 5
   _indexNPC1: 6
   _giveTask: {fileID: 1017058496}
+  _dialoge: {fileID: 1308515260}
 --- !u!61 &1308515257
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20201,7 +20211,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1308515255}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -34.53, y: 18.1, z: 0}
   m_LocalScale: {x: 0.76135, y: 0.76135, z: 0.76135}
   m_ConstrainProportionsScale: 0
@@ -20250,6 +20260,8 @@ MonoBehaviour:
   - {fileID: 751234676}
   - {fileID: 1747685674}
   _player: {fileID: 146073236}
+  _npc: {fileID: 1308515256}
+  dialogActive: 0
 --- !u!1 &1310689612
 GameObject:
   m_ObjectHideFlags: 0
@@ -30853,15 +30865,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canvasPressF: {fileID: 786611328}
-  _canvasDialoge: {fileID: 262065623}
   _miniMapMarker: {fileID: 1936941777}
   _WhatTask: {fileID: 1126610119}
   _DescriptionTask: {fileID: 1956111288}
   _TaskIndex: {fileID: 1710744362}
   _TaskIndexInt: 0
+  _isInteractable: 0
   _indexNPC: 1
   _indexNPC1: 2
   _giveTask: {fileID: 1017058496}
+  _dialoge: {fileID: 1823164811}
 --- !u!61 &1823164808
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -30994,6 +31007,8 @@ MonoBehaviour:
   - {fileID: 1767705999}
   - {fileID: 1565221711}
   _player: {fileID: 146073236}
+  _npc: {fileID: 1823164807}
+  dialogActive: 0
 --- !u!1 &1830952374
 GameObject:
   m_ObjectHideFlags: 0
@@ -34486,15 +34501,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canvasPressF: {fileID: 1836612581}
-  _canvasDialoge: {fileID: 262065623}
   _miniMapMarker: {fileID: 174666206}
   _WhatTask: {fileID: 1126610119}
   _DescriptionTask: {fileID: 1956111288}
   _TaskIndex: {fileID: 1710744362}
   _TaskIndexInt: 0
+  _isInteractable: 0
   _indexNPC: 3
   _indexNPC1: 4
   _giveTask: {fileID: 1017058496}
+  _dialoge: {fileID: 2020513234}
 --- !u!61 &2020513231
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -34580,7 +34596,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2020513229}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 28.21, y: -15.11, z: 0}
   m_LocalScale: {x: 0.76135, y: 0.76135, z: 0.76135}
   m_ConstrainProportionsScale: 0
@@ -34629,6 +34645,8 @@ MonoBehaviour:
   - {fileID: 1920198907}
   - {fileID: 1285679911}
   _player: {fileID: 146073236}
+  _npc: {fileID: 2020513230}
+  dialogActive: 0
 --- !u!1 &2022054293
 GameObject:
   m_ObjectHideFlags: 0
