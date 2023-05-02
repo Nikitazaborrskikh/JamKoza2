@@ -16,8 +16,8 @@ public class UIAnimComics : MonoBehaviour
 
     private void Start()
     {
-        _panelComicsOne.sizeDelta = new Vector2(-500, Screen.height);
-        _panelComicsOne.DOSizeDelta(new Vector2(Screen.width, Screen.height), _timeAnimation);      
+        _panelComicsOne.sizeDelta = new Vector2(-500, 1080);
+        _panelComicsOne.DOSizeDelta(new Vector2(1920, 1080), _timeAnimation);      
     }
 
     private void Update()
@@ -27,14 +27,14 @@ public class UIAnimComics : MonoBehaviour
 
     public void OnOpenComicsTwo()
     {
-        _panelComicsTwo.sizeDelta = new Vector2(Screen.width, -500);
-        _panelComicsTwo.DOSizeDelta(new Vector2(Screen.width, Screen.height), _timeAnimation);
+        _panelComicsTwo.sizeDelta = new Vector2(1920, -500);
+        _panelComicsTwo.DOSizeDelta(new Vector2(1920, 1080), _timeAnimation);
     }
 
     public void OnOpenComicsThree()
     {
-        _panelComicsThree.sizeDelta = new Vector2(-500,Screen.height);
-        _panelComicsThree.DOSizeDelta(new Vector2(Screen.width, Screen.height), _timeAnimation);
+        _panelComicsThree.sizeDelta = new Vector2(-500,1080);
+        _panelComicsThree.DOSizeDelta(new Vector2(1920, 1080), _timeAnimation);
     }
 
     public void NextScene()
