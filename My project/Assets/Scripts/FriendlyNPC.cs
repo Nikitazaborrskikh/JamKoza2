@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FriendlyNPC : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class FriendlyNPC : MonoBehaviour
     [SerializeField] private TMP_Text _WhatTask;
     [SerializeField] private TMP_Text _DescriptionTask;
     [SerializeField] private TMP_Text _TaskIndex;
+   // [SerializeField] private Image _imageTask;
+    //[SerializeField] private Image _imageTask2;
     [SerializeField] private int _TaskIndexInt;
     private bool _isInteractable;
     public string _indexNPC;
@@ -103,6 +106,7 @@ public class FriendlyNPC : MonoBehaviour
         _WhatTask.text = _WhatTaskNon;
         _DescriptionTask.text = _DescriptionTaskNon;
         _TaskIndex.text = _TaskIndexNon;
+        //_imageTask = _imageTask2;
         _giveTask._taskIndexInt = 0;
         _miniMapMarker.SetActive(false);
         _canvasDialoge.SetActive(false);
