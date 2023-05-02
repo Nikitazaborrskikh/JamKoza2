@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-public static class ScoreAdd
+public static class ScoreAdd                
 {
     
      public static int score = 0;
