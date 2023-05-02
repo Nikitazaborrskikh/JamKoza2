@@ -10,8 +10,8 @@ public class EnemyAI : MonoBehaviour
     public float aggroRange = 5f; 
     
     private Transform target; 
-    private bool isChasing = false; 
-    
+    private bool isChasing = false;
+
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
@@ -19,7 +19,7 @@ public class EnemyAI : MonoBehaviour
     
     void Update()
     {
-        
+       
         float distanceToTarget = Vector2.Distance(transform.position, target.position);
         
         
