@@ -38,7 +38,7 @@ public class EnemyAI : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
         }
 
-        if (distanceToTarget <= 0.8f)
+        if (distanceToTarget <= 1f)
         {
             
             SceneManager.LoadScene(6);

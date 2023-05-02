@@ -2,20 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-public class ScoreAdd : MonoBehaviour
+public static class ScoreAdd
 {
-    [SerializeField] private TMP_Text _scoretext;
-    public int score = 0;
+    
+     public static int score = 0;
 
 
 
-    public void AddScore()
+    public static void AddScore()
     {
         score += 100;
-        _scoretext.text = $"Score:{score}";
+        
     }
 
-    public int ScoreCount()
+    public static int  ScoreCount()
     {
         return score;
         
