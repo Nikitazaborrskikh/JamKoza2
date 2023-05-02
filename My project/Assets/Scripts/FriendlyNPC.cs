@@ -8,19 +8,17 @@ using UnityEngine.UI;
 
 public class FriendlyNPC : MonoBehaviour
 {
-    private bool isPlayerInRange = false; // Игрок находится в зоне видимости
+    private bool isPlayerInRange = false; 
 
     [SerializeField] private GameObject _canvasPressF;
-    [SerializeField] private GameObject _canvasDialoge;
     [SerializeField] private GameObject _miniMapMarker;
 
     [SerializeField] private TMP_Text _WhatTask;
     [SerializeField] private TMP_Text _DescriptionTask;
     [SerializeField] private TMP_Text _TaskIndex;
-   // [SerializeField] private Image _imageTask;
-    //[SerializeField] private Image _imageTask2;
+   
     [SerializeField] private int _TaskIndexInt;
-    private bool _isInteractable;
+   [HideInInspector] public bool _isInteractable;
     public string _indexNPC;
     public string _indexNPC1;
 
@@ -29,6 +27,7 @@ public class FriendlyNPC : MonoBehaviour
     public readonly string _TaskIndexNon = " ";
 
     [SerializeField]private GiveTask _giveTask;
+    [SerializeField] private DialogeManager _dialoge;
     
     
 
@@ -40,12 +39,14 @@ public class FriendlyNPC : MonoBehaviour
     private void Start()
     {
         _canvasPressF.SetActive(false);
-        _canvasDialoge.SetActive(false);
+        
        _miniMapMarker.SetActive(false);
+       
     }
 
     private void Update()
     {
+         
         
         if (_indexNPC == _TaskIndex.text || _indexNPC1 == _TaskIndex.text)
         {
@@ -53,27 +54,33 @@ public class FriendlyNPC : MonoBehaviour
                 
         }
 
-        if (_isInteractable)
-        {
-            if (Input.GetKeyDown(KeyCode.F))
-            { 
-                
-                QuestCompleted();       
-            }
-        }
+        
+        
+             if (Input.GetKeyDown(KeyCode.F) && _isInteractable)
+             {
+                 if (!_dialoge.dialogActive)
+                 {
+                     QuestCompleted(); 
+                 }
+                      
+             }
+        
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         
+        
         if (other.CompareTag("Player"))
         {
+        
             if (_indexNPC == _TaskIndex.text || _indexNPC1 == _TaskIndex.text)
             {
+                
                 _isInteractable = true;
                 isPlayerInRange = true;
                 _canvasPressF.SetActive(true);
-                
+
             }
             
         }
@@ -84,36 +91,31 @@ public class FriendlyNPC : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             _isInteractable = false;
+            _canvasPressF.SetActive(false);
+            
         }
        
     }
 
-    public void OnTriggerStay2D(Collider2D collision)
-    {
-        
-        if (_indexNPC == _TaskIndex.text|| _indexNPC1 == _TaskIndex.text)
-        {
-            _canvasPressF.SetActive(true);
-           
-           
-
-           
-        }
-       
-    }
+    
 
     public void QuestCompleted()
     {
+        
+        _canvasPressF.SetActive(false);
         _WhatTask.text = _WhatTaskNon;
         _DescriptionTask.text = _DescriptionTaskNon;
         _TaskIndex.text = _TaskIndexNon;
-        //_imageTask = _imageTask2;
+       
         _giveTask._taskIndexInt = 0;
         _miniMapMarker.SetActive(false);
-        _canvasDialoge.SetActive(false);
-        _canvasPressF.SetActive(false);
+        
         ScoreAdd.AddScore();
         _isInteractable = false;
+        _dialoge.dialogActive = false;
+        // Debug.Log(_isInteractable);
+        // Debug.Log(_dialoge.dialogActive);
+
     }
 
     

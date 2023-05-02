@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using Random = UnityEngine.Random;
 using UnityEngine.UI;
@@ -23,34 +24,37 @@ public class DialogeManager : MonoBehaviour
 
     
     [SerializeField] private GameObject _player;
-    
+    [SerializeField] private FriendlyNPC _npc;
+    private Rigidbody2D _playerRB;
 
-    private bool dialogActive; 
+   [HideInInspector] public bool dialogActive; 
     
     void Start()
     {
         dialogBox.SetActive(false); 
         randomIndex = Random.Range(-10, 10);
-         
+        dialogActive = false;
+         _playerRB = _player.GetComponent<Rigidbody2D>() ;
+
     }
 
     void Update()
     {
         
+        
         if (dialogActive)
         {
-            _player.SetActive(false);
-            
+            _playerRB.constraints = RigidbodyConstraints2D.FreezePosition;
+            _pictures[counter].SetActive(true);
+
             if(randomIndex <= 0)
             {
-                dialogText.text = dialogLines[currentLine];
+                ShowDialog();
             }
             if (randomIndex > 0)
             {
-                dialogText.text = dialogLines1[currentLine];
+                ShowDialog1();
             }
-            _pictures[counter].SetActive(true);
-
             
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -60,7 +64,10 @@ public class DialogeManager : MonoBehaviour
                 
                 if (currentLine >= dialogLines.Length || currentLine >= dialogLines1.Length)
                 {
-                    _player.SetActive(true);
+                    
+                    _playerRB.constraints = RigidbodyConstraints2D.None;
+                    _playerRB.constraints = RigidbodyConstraints2D.FreezeRotation;
+                    
                     counter = 0;
                     dialogBox.SetActive(false);
                     dialogActive = false;
@@ -74,7 +81,7 @@ public class DialogeManager : MonoBehaviour
 
     public void ShowDialog()
     {
-        dialogActive = true; 
+        
 
         
         dialogBox.SetActive(true);
@@ -82,36 +89,25 @@ public class DialogeManager : MonoBehaviour
     }
     public void ShowDialog1()
     {
-        dialogActive = true; 
+        
 
         
         dialogBox.SetActive(true);
         dialogText.text = dialogLines1[currentLine];
     }
 
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
-        
-           
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                
-                Debug.Log(randomIndex);
-                if(randomIndex <= 0)
+                if (_npc._isInteractable)
                 {
-                    ShowDialog();
+                    Debug.Log(_npc._isInteractable);
+                    dialogActive = true;
                 }
-                if(randomIndex >= 0)
-                {
-                    ShowDialog1();
-                }
-                
-                
-                
-            }
-            
         
-        
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        dialogActive = false;
     }
 }
