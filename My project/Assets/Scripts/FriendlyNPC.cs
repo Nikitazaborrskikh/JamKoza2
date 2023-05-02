@@ -57,7 +57,7 @@ public class FriendlyNPC : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.F))
             { 
-                Debug.Log("F");
+                
                 QuestCompleted();       
             }
         }
@@ -94,8 +94,8 @@ public class FriendlyNPC : MonoBehaviour
         if (_indexNPC == _TaskIndex.text|| _indexNPC1 == _TaskIndex.text)
         {
             _canvasPressF.SetActive(true);
-           Debug.Log("1111");
-           _isInteractable = true;
+           
+           
 
            
         }
