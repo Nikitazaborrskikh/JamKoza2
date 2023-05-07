@@ -11,16 +11,22 @@ public class FriendlyNPC : MonoBehaviour
     private bool isPlayerInRange = false; 
 
     [SerializeField] private GameObject _canvasPressF;
-    [SerializeField] private GameObject _miniMapMarker;
-
+     public GameObject _miniMapMarker;
+     private Transform NPC;
+     public Transform MinimapCam;
+     public float MinimapSize;
+     
     [SerializeField] private TMP_Text _WhatTask;
     [SerializeField] private TMP_Text _DescriptionTask;
     [SerializeField] private TMP_Text _TaskIndex;
+    
+    
    
     [SerializeField] private int _TaskIndexInt;
    [HideInInspector] public bool _isInteractable;
     public string _indexNPC;
     public string _indexNPC1;
+    
 
     private readonly string _WhatTaskNon = " ";
     private readonly string _DescriptionTaskNon = " ";
@@ -38,6 +44,7 @@ public class FriendlyNPC : MonoBehaviour
 
     private void Start()
     {
+        NPC = GetComponent<Transform>();
         _canvasPressF.SetActive(false);
         
        _miniMapMarker.SetActive(false);
@@ -46,12 +53,12 @@ public class FriendlyNPC : MonoBehaviour
 
     private void Update()
     {
-         
+        _miniMapMarker.transform.position = NPC.transform.position;
+        
         
         if (_indexNPC == _TaskIndex.text || _indexNPC1 == _TaskIndex.text)
         {
             _miniMapMarker.SetActive(true);
-                
         }
 
         
@@ -65,6 +72,25 @@ public class FriendlyNPC : MonoBehaviour
                       
              }
         
+    }
+
+    private void LateUpdate()
+    {
+        Vector2 centerPosition = MinimapCam.transform.position;
+        centerPosition.y -= 0.5f;
+        float Distance = Vector2.Distance(new Vector2(_miniMapMarker.transform.position.x , _miniMapMarker.transform.position.y), centerPosition);
+        if (Distance > MinimapSize)
+        {
+            
+            Vector2 fromOriginToObject = new Vector2(_miniMapMarker.transform.position.x , _miniMapMarker.transform.position.y) - centerPosition;
+            
+
+            
+            fromOriginToObject *= MinimapSize / Distance;
+
+            
+            _miniMapMarker.transform.position = centerPosition + fromOriginToObject;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -113,8 +139,7 @@ public class FriendlyNPC : MonoBehaviour
         ScoreAdd.AddScore();
         _isInteractable = false;
         _dialoge.dialogActive = false;
-        // Debug.Log(_isInteractable);
-        // Debug.Log(_dialoge.dialogActive);
+        
 
     }
 

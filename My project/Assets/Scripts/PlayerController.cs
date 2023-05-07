@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 direction;
     [SerializeField] private SpriteRenderer _sprite;
     [SerializeField] private  TMP_Text _scoretext;
+    public bool _IsFrezeed;
     
 
     void Start()
@@ -25,8 +26,15 @@ public class PlayerController : MonoBehaviour
         _scoretext.text = $"Score:{ScoreAdd.score.ToString()}";
         float x = Input.GetAxisRaw("Horizontal"); 
         float y = Input.GetAxisRaw("Vertical"); 
-        direction = new Vector2(x, y).normalized; 
-
+        direction = new Vector2(x, y).normalized;
+        if (playerRigidbody2D.constraints == RigidbodyConstraints2D.FreezePosition)
+        {
+            _IsFrezeed = true;
+        }
+        else
+        {
+            _IsFrezeed = false;
+        }
        
     }
 
@@ -42,9 +50,13 @@ public class PlayerController : MonoBehaviour
         {
             _sprite.flipX = false;
         }
+
         
         
     }
+
+    
+    
 
     
 }

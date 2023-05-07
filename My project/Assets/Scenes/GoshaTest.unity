@@ -2060,6 +2060,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   aggroRange: 5
+  player: {fileID: 146073238}
 --- !u!212 &125111026
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3029,6 +3030,7 @@ MonoBehaviour:
   speed: 5
   _sprite: {fileID: 1927733288}
   _scoretext: {fileID: 1601548373}
+  _IsFrezeed: 0
 --- !u!212 &146073239
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7395,7 +7397,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &437182958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7410,6 +7412,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _canvasPressF: {fileID: 127831944}
   _miniMapMarker: {fileID: 355885308}
+  MinimapCam: {fileID: 1506903345}
+  MinimapSize: 18
   _WhatTask: {fileID: 1126610119}
   _DescriptionTask: {fileID: 1956111288}
   _TaskIndex: {fileID: 1710744362}
@@ -7554,6 +7558,18 @@ MonoBehaviour:
   - {fileID: 1274145541}
   _player: {fileID: 146073236}
   _npc: {fileID: 437182958}
+  _enemiesRB:
+  - {fileID: 1234303205}
+  - {fileID: 125111024}
+  - {fileID: 1873266090}
+  - {fileID: 2089225237}
+  - {fileID: 1540134257}
+  - {fileID: 896260472}
+  - {fileID: 1176583383}
+  - {fileID: 1785816369}
+  - {fileID: 1858146288}
+  - {fileID: 936999127}
+  - {fileID: 722403055}
   dialogActive: 0
 --- !u!1 &437369034
 GameObject:
@@ -8227,7 +8243,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &482372032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8242,6 +8258,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _canvasPressF: {fileID: 1875990368}
   _miniMapMarker: {fileID: 2022194186}
+  MinimapCam: {fileID: 1506903345}
+  MinimapSize: 18
   _WhatTask: {fileID: 1126610119}
   _DescriptionTask: {fileID: 1956111288}
   _TaskIndex: {fileID: 1710744362}
@@ -8385,6 +8403,18 @@ MonoBehaviour:
   - {fileID: 1457329710}
   _player: {fileID: 146073236}
   _npc: {fileID: 482372032}
+  _enemiesRB:
+  - {fileID: 1234303205}
+  - {fileID: 125111024}
+  - {fileID: 1873266090}
+  - {fileID: 2089225237}
+  - {fileID: 1540134257}
+  - {fileID: 896260472}
+  - {fileID: 1176583383}
+  - {fileID: 1785816369}
+  - {fileID: 1858146288}
+  - {fileID: 936999127}
+  - {fileID: 722403055}
   dialogActive: 0
 --- !u!1 &487696935
 GameObject:
@@ -11445,6 +11475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   aggroRange: 5
+  player: {fileID: 146073238}
 --- !u!212 &722403057
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11909,7 +11940,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &782992108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11924,6 +11955,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _canvasPressF: {fileID: 1670369364}
   _miniMapMarker: {fileID: 1857463851}
+  MinimapCam: {fileID: 1506903345}
+  MinimapSize: 18
   _WhatTask: {fileID: 1126610119}
   _DescriptionTask: {fileID: 1956111288}
   _TaskIndex: {fileID: 1710744362}
@@ -12067,6 +12100,18 @@ MonoBehaviour:
   - {fileID: 706692805}
   _player: {fileID: 146073236}
   _npc: {fileID: 782992108}
+  _enemiesRB:
+  - {fileID: 1234303205}
+  - {fileID: 125111024}
+  - {fileID: 1873266090}
+  - {fileID: 2089225237}
+  - {fileID: 1540134257}
+  - {fileID: 896260472}
+  - {fileID: 1176583383}
+  - {fileID: 1785816369}
+  - {fileID: 1858146288}
+  - {fileID: 936999127}
+  - {fileID: 722403055}
   dialogActive: 0
 --- !u!1 &784760586
 GameObject:
@@ -12668,6 +12713,134 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &800624147
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 800624149}
+  - component: {fileID: 800624148}
+  m_Layer: 0
+  m_Name: Audio Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &800624148
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800624147}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 15e8f8021c2e89e42ba3e257d2bbbe7f, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.165
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &800624149
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800624147}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.0556936, y: 4.0201893, z: -0.26015472}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &817657987
 GameObject:
   m_ObjectHideFlags: 0
@@ -13441,6 +13614,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   aggroRange: 5
+  player: {fileID: 146073238}
 --- !u!212 &896260474
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14317,6 +14491,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   aggroRange: 5
+  player: {fileID: 146073238}
 --- !u!212 &936999129
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15372,7 +15547,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1013025035
 Transform:
   m_ObjectHideFlags: 0
@@ -18680,6 +18855,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   aggroRange: 5
+  player: {fileID: 146073238}
 --- !u!212 &1176583385
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19434,6 +19610,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   aggroRange: 5
+  player: {fileID: 146073238}
 --- !u!212 &1234303207
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20680,7 +20857,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1308515256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20695,6 +20872,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _canvasPressF: {fileID: 678522687}
   _miniMapMarker: {fileID: 1866318611}
+  MinimapCam: {fileID: 1506903345}
+  MinimapSize: 18
   _WhatTask: {fileID: 1126610119}
   _DescriptionTask: {fileID: 1956111288}
   _TaskIndex: {fileID: 1710744362}
@@ -20839,6 +21018,18 @@ MonoBehaviour:
   - {fileID: 1747685674}
   _player: {fileID: 146073236}
   _npc: {fileID: 1308515256}
+  _enemiesRB:
+  - {fileID: 1234303205}
+  - {fileID: 125111024}
+  - {fileID: 1873266090}
+  - {fileID: 2089225237}
+  - {fileID: 1540134257}
+  - {fileID: 896260472}
+  - {fileID: 1176583383}
+  - {fileID: 1785816369}
+  - {fileID: 1858146288}
+  - {fileID: 936999127}
+  - {fileID: 722403055}
   dialogActive: 0
 --- !u!1 &1310689612
 GameObject:
@@ -26472,6 +26663,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   aggroRange: 5
+  player: {fileID: 146073238}
 --- !u!50 &1540134257
 Rigidbody2D:
   serializedVersion: 4
@@ -31001,6 +31193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   aggroRange: 5
+  player: {fileID: 146073238}
 --- !u!212 &1785816371
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -31663,7 +31856,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1823164807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31678,6 +31871,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _canvasPressF: {fileID: 786611328}
   _miniMapMarker: {fileID: 1936941777}
+  MinimapCam: {fileID: 1506903345}
+  MinimapSize: 18
   _WhatTask: {fileID: 1126610119}
   _DescriptionTask: {fileID: 1956111288}
   _TaskIndex: {fileID: 1710744362}
@@ -31820,6 +32015,18 @@ MonoBehaviour:
   - {fileID: 1565221711}
   _player: {fileID: 146073236}
   _npc: {fileID: 1823164807}
+  _enemiesRB:
+  - {fileID: 1234303205}
+  - {fileID: 125111024}
+  - {fileID: 1873266090}
+  - {fileID: 2089225237}
+  - {fileID: 1540134257}
+  - {fileID: 896260472}
+  - {fileID: 1176583383}
+  - {fileID: 1785816369}
+  - {fileID: 1858146288}
+  - {fileID: 936999127}
+  - {fileID: 722403055}
   dialogActive: 0
 --- !u!1 &1830952374
 GameObject:
@@ -33084,6 +33291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   aggroRange: 5
+  player: {fileID: 146073238}
 --- !u!212 &1858146290
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -33390,6 +33598,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   aggroRange: 5
+  player: {fileID: 146073238}
 --- !u!212 &1873266092
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -35682,7 +35891,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2020513230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35697,6 +35906,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _canvasPressF: {fileID: 1836612581}
   _miniMapMarker: {fileID: 174666206}
+  MinimapCam: {fileID: 1506903345}
+  MinimapSize: 18
   _WhatTask: {fileID: 1126610119}
   _DescriptionTask: {fileID: 1956111288}
   _TaskIndex: {fileID: 1710744362}
@@ -35841,6 +36052,18 @@ MonoBehaviour:
   - {fileID: 1285679911}
   _player: {fileID: 146073236}
   _npc: {fileID: 2020513230}
+  _enemiesRB:
+  - {fileID: 1234303205}
+  - {fileID: 125111024}
+  - {fileID: 1873266090}
+  - {fileID: 2089225237}
+  - {fileID: 1540134257}
+  - {fileID: 896260472}
+  - {fileID: 1176583383}
+  - {fileID: 1785816369}
+  - {fileID: 1858146288}
+  - {fileID: 936999127}
+  - {fileID: 722403055}
   dialogActive: 0
 --- !u!1 &2022054293
 GameObject:
@@ -36641,6 +36864,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   aggroRange: 5
+  player: {fileID: 146073238}
 --- !u!212 &2089225239
 SpriteRenderer:
   m_ObjectHideFlags: 0

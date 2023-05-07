@@ -12,7 +12,7 @@ public class DialogeManager : MonoBehaviour
 {
     public GameObject dialogBox;
     public TextMeshProUGUI dialogText;
-
+    
     public string[] dialogLines;
     public string[] dialogLines1;
     public int currentLine;
@@ -23,8 +23,11 @@ public class DialogeManager : MonoBehaviour
 
     
     [SerializeField] private GameObject _player;
+
+    
     [SerializeField] private FriendlyNPC _npc;
     private Rigidbody2D _playerRB;
+    [SerializeField]private Rigidbody2D[] _enemiesRB;
 
    [HideInInspector] public bool dialogActive; 
     
@@ -34,7 +37,7 @@ public class DialogeManager : MonoBehaviour
         randomIndex = Random.Range(-10, 10);
         dialogActive = false;
          _playerRB = _player.GetComponent<Rigidbody2D>() ;
-
+         
     }
 
     void Update()
@@ -43,7 +46,12 @@ public class DialogeManager : MonoBehaviour
         
         if (dialogActive)
         {
+            foreach (var enemy in _enemiesRB)
+            {
+                enemy.constraints = RigidbodyConstraints2D.FreezePosition;
+            }
             _playerRB.constraints = RigidbodyConstraints2D.FreezePosition;
+            
             _pictures[counter].SetActive(true);
 
             if(_giveTask._taskIndexInt % 2 == 0)
@@ -66,11 +74,16 @@ public class DialogeManager : MonoBehaviour
                     
                     _playerRB.constraints = RigidbodyConstraints2D.None;
                     _playerRB.constraints = RigidbodyConstraints2D.FreezeRotation;
-                    
+                    foreach (var enemy in _enemiesRB)
+                    {
+                        enemy.constraints = RigidbodyConstraints2D.None;
+                        enemy.constraints = RigidbodyConstraints2D.FreezeRotation;
+                    }
                     counter = 0;
                     dialogBox.SetActive(false);
                     dialogActive = false;
                     currentLine = 0;
+                    
                    
                     
                 }

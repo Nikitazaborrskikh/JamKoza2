@@ -8,22 +8,26 @@ public class EnemyAI : MonoBehaviour
     
     public float moveSpeed = 5f; 
     public float aggroRange = 5f; 
-    
+    [SerializeField] private PlayerController player;
     private Transform target; 
     private bool isChasing = false;
+    
+    
 
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
+       
+        
     }
     
     void Update()
     {
        
         float distanceToTarget = Vector2.Distance(transform.position, target.position);
-        
-        
-        if (distanceToTarget < aggroRange)
+
+       
+        if (distanceToTarget < aggroRange && !player._IsFrezeed)
         {
             isChasing = true; 
         }
