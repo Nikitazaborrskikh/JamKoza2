@@ -20,4 +20,9 @@ public static class ScoreAdd
         return score;
         
     }
+
+    public static void ResetScore()
+    {
+        score = 0;
+    }
 }

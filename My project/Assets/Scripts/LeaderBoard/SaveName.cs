@@ -31,5 +31,6 @@ public class SaveName : MonoBehaviour
     {
         Debug.Log(NamePlayer.text);
         highscoreTable.AddHighscoreEntry(ScoreAdd.ScoreCount(), NamePlayer.text);    
+        ScoreAdd.ResetScore();
     }
 }
